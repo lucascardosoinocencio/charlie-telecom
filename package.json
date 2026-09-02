@@ -15,6 +15,7 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
     "jpeg-js": "^0.4.4",
+    "netlify-cli": "^27.4.2",
     "pngjs": "^7.0.0",
     "tailwindcss": "^4.3.3"
   }

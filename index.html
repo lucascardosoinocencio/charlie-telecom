@@ -75,21 +75,21 @@
     <div class="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:py-32">
 
       <!-- Copy column -->
-      <div class="max-w-2xl" data-reveal>
-        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-mist-200">
+      <div class="max-w-2xl">
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-mist-200" data-hero-item>
           <span class="h-1.5 w-1.5 rounded-full bg-brand-red-500"></span>
           27 anos protegendo Bauru e região
         </span>
 
-        <h1 class="mt-6 text-balance font-display text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-[3.4rem]">
+        <h1 class="mt-6 text-balance font-display text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-[3.4rem]" data-hero-item>
           Segurança eletrônica de verdade, instalada por quem faz isso desde 1998.
         </h1>
 
-        <p class="mt-6 max-w-xl text-balance text-base leading-relaxed text-mist-300 sm:text-lg">
+        <p class="mt-6 max-w-xl text-balance text-base leading-relaxed text-mist-300 sm:text-lg" data-hero-item>
           Câmeras, alarme, automação de portão e rede, projetados e instalados por um profissional só, com as marcas líderes do mercado. Atendemos Bauru, SP e um raio de até 200km.
         </p>
 
-        <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center" data-hero-item>
           <a
             href="https://wa.me/5514996248282?text=Ol%C3%A1!%20Quero%20pedir%20um%20or%C3%A7amento."
             target="_blank" rel="noopener"
@@ -103,20 +103,20 @@
           </a>
         </div>
 
-        <dl class="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+        <dl class="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8" data-hero-item>
           <div>
             <dt class="sr-only">Anos de mercado</dt>
-            <dd class="font-display text-2xl font-bold text-white sm:text-3xl">27+</dd>
+            <dd class="font-display text-2xl font-bold text-white sm:text-3xl" data-counter data-target="27" data-suffix="+">0</dd>
             <p class="mt-1 text-xs text-mist-400 sm:text-sm">anos de mercado</p>
           </div>
           <div>
             <dt class="sr-only">Raio de atendimento</dt>
-            <dd class="font-display text-2xl font-bold text-white sm:text-3xl">200km</dd>
+            <dd class="font-display text-2xl font-bold text-white sm:text-3xl" data-counter data-target="200" data-suffix="km">0</dd>
             <p class="mt-1 text-xs text-mist-400 sm:text-sm">a partir de Bauru, SP</p>
           </div>
           <div>
             <dt class="sr-only">Marcas parceiras</dt>
-            <dd class="font-display text-2xl font-bold text-white sm:text-3xl">7</dd>
+            <dd class="font-display text-2xl font-bold text-white sm:text-3xl" data-counter data-target="7" data-suffix="">0</dd>
             <p class="mt-1 text-xs text-mist-400 sm:text-sm">marcas líderes instaladas</p>
           </div>
         </dl>
@@ -129,7 +129,7 @@
   <section id="marcas" class="border-y border-ink-800/60 bg-ink-900 py-16 sm:py-20">
     <div class="mx-auto max-w-7xl px-5 sm:px-8">
       <div class="flex items-center gap-3" data-reveal>
-        <span class="h-px w-8 bg-brand-red-500"></span>
+        <span class="h-px shrink-0 bg-brand-red-500" data-kicker-line></span>
         <span class="text-xs font-semibold uppercase tracking-widest text-brand-red-400">Equipamentos homologados</span>
       </div>
       <h2 class="mt-3 max-w-xl text-balance font-display text-2xl font-bold text-white sm:text-3xl" data-reveal>
@@ -171,7 +171,7 @@
   <section id="servicos" class="bg-paper py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-5 sm:px-8">
       <div class="flex items-center gap-3" data-reveal>
-        <span class="h-px w-8 bg-brand-red-600"></span>
+        <span class="h-px shrink-0 bg-brand-red-600" data-kicker-line></span>
         <span class="text-xs font-semibold uppercase tracking-widest text-brand-red-600">O que instalamos</span>
       </div>
       <h2 class="mt-3 max-w-2xl text-balance font-display text-3xl font-bold text-ink-950 sm:text-4xl" data-reveal>
@@ -181,10 +181,11 @@
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
         <!-- CFTV -->
-        <article class="group overflow-hidden rounded-3xl border border-mist-200 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/50 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="left" data-reveal-delay="0">
+        <article class="group overflow-hidden rounded-3xl border border-mist-200 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/50 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="left" data-reveal-delay="0">
           <div class="aspect-4/3 overflow-hidden bg-mist-100" data-rotator>
             <img data-rotator-slide src="/assents/cftv-ip2.jpg" alt="Câmera IP Intelbras instalada em fachada" class="is-active object-cover transition-transform duration-500 group-hover:scale-[1.08]" loading="lazy" />
             <img data-rotator-slide src="/assents/cftv-ip3.webp" alt="Câmera IP Intelbras em ambiente urbano" class="object-cover transition-transform duration-500 group-hover:scale-[1.08]" loading="lazy" />
+            <img data-rotator-slide src="/assents/cftv-ip-hikvision-crop.png" alt="Linha de câmeras IP Hikvision" class="object-cover transition-transform duration-500 group-hover:scale-[1.08]" loading="lazy" />
           </div>
           <div class="p-6">
             <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-red-500/10 text-brand-red-600">
@@ -200,7 +201,7 @@
         </article>
 
         <!-- Alarmes -->
-        <article class="group overflow-hidden rounded-3xl border border-mist-200 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/50 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="right" data-reveal-delay="90">
+        <article class="group overflow-hidden rounded-3xl border border-mist-200 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/50 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="right" data-reveal-delay="90">
           <div class="aspect-4/3 overflow-hidden bg-mist-100" data-rotator>
             <img data-rotator-slide src="/assents/sistema-8000-sistema-de-alarme-sem-fio.webp" alt="Kit de alarme sem fio Intelbras AMT 8000" class="is-active object-cover transition-transform duration-500 group-hover:scale-[1.08]" loading="lazy" />
             <img data-rotator-slide src="/assents/kit-alarme-hikvision.jpg" alt="Kit de alarme Hikvision com sensores e central" class="object-cover transition-transform duration-500 group-hover:scale-[1.08]" loading="lazy" />
@@ -219,7 +220,7 @@
         </article>
 
         <!-- Automação de portões -->
-        <article class="group overflow-hidden rounded-3xl border border-mist-200 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/50 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="left" data-reveal-delay="180">
+        <article class="group overflow-hidden rounded-3xl border border-mist-200 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/50 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="left" data-reveal-delay="180">
           <div class="aspect-4/3 overflow-hidden bg-mist-100" data-rotator>
             <img data-rotator-slide src="/assents/motor-basculante.webp" alt="Motor de portão basculante instalado" class="is-active object-cover transition-transform duration-500 group-hover:scale-[1.08]" loading="lazy" />
             <img data-rotator-slide src="/assents/motor-deslizante.webp" alt="Motor de portão deslizante instalado" class="object-cover transition-transform duration-500 group-hover:scale-[1.08]" loading="lazy" />
@@ -238,7 +239,7 @@
         </article>
 
         <!-- Redes -->
-        <article class="group overflow-hidden rounded-3xl border border-mist-200 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/50 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="right" data-reveal-delay="270">
+        <article class="group overflow-hidden rounded-3xl border border-mist-200 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/50 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="right" data-reveal-delay="270">
           <div class="aspect-4/3 overflow-hidden bg-mist-100" data-rotator>
             <img data-rotator-slide src="/assents/rack-redes.jpg" alt="Rack de rede estruturada com cabeamento" class="is-active object-cover transition-transform duration-500 group-hover:scale-[1.08]" loading="lazy" />
             <img data-rotator-slide src="/assents/ubiquiti-equipamentos.png" alt="Linha de equipamentos Ubiquiti para redes" class="object-cover transition-transform duration-500 group-hover:scale-[1.08]" loading="lazy" />
@@ -264,7 +265,7 @@
   <section id="por-que" class="bg-ink-950 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-5 sm:px-8">
       <div class="flex items-center gap-3" data-reveal>
-        <span class="h-px w-8 bg-brand-red-500"></span>
+        <span class="h-px shrink-0 bg-brand-red-500" data-kicker-line></span>
         <span class="text-xs font-semibold uppercase tracking-widest text-brand-red-400">Por que a Charlie Telecom</span>
       </div>
       <h2 class="mt-3 max-w-2xl text-balance font-display text-3xl font-bold text-white sm:text-4xl" data-reveal>
@@ -273,7 +274,7 @@
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="left" data-reveal-delay="0">
+        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="left" data-reveal-delay="0">
           <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-red-500/15 text-brand-red-400">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
           </span>
@@ -281,7 +282,7 @@
           <p class="mt-2 text-sm leading-relaxed text-mist-400">Atendendo Bauru e região desde 1998. A gente já estava instalando muito antes da maioria das empresas do setor existir.</p>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="right" data-reveal-delay="90">
+        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="right" data-reveal-delay="90">
           <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-red-500/15 text-brand-red-400">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
           </span>
@@ -289,7 +290,7 @@
           <p class="mt-2 text-sm leading-relaxed text-mist-400">Câmeras, alarme, portão e rede resolvidos pela mesma pessoa que vai até você. Sem precisar contratar profissionais diferentes pra cada serviço.</p>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="left" data-reveal-delay="180">
+        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="left" data-reveal-delay="180">
           <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-red-500/15 text-brand-red-400">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.94 11A8.94 8.94 0 1 0 12 20.94"/><path d="M12 6v6l4 2"/><circle cx="18" cy="18" r="3"/><path d="M18 16.5v3M18 18h1.5"/></svg>
           </span>
@@ -297,7 +298,7 @@
           <p class="mt-2 text-sm leading-relaxed text-mist-400">Não atendemos só Bauru. Cobrimos um raio de até 200km ao redor da cidade, pra quem também precisa de um instalador de confiança.</p>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="right" data-reveal-delay="270">
+        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="right" data-reveal-delay="270">
           <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-red-500/15 text-brand-red-400">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
           </span>
@@ -313,7 +314,7 @@
   <section id="sobre" class="bg-paper py-24 sm:py-32">
     <div class="mx-auto max-w-6xl px-5 sm:px-8">
       <div class="flex items-center gap-3" data-reveal>
-        <span class="h-px w-8 bg-brand-red-600"></span>
+        <span class="h-px shrink-0 bg-brand-red-600" data-kicker-line></span>
         <span class="text-xs font-semibold uppercase tracking-widest text-brand-red-600">Quem está por trás da Charlie Telecom</span>
       </div>
       <h2 class="mt-3 max-w-2xl text-balance font-display text-3xl font-bold text-ink-950 sm:text-4xl" data-reveal>
@@ -395,7 +396,7 @@
   <section id="certificacoes" class="bg-ink-950 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-5 sm:px-8">
       <div class="flex items-center gap-3" data-reveal>
-        <span class="h-px w-8 bg-brand-red-500"></span>
+        <span class="h-px shrink-0 bg-brand-red-500" data-kicker-line></span>
         <span class="text-xs font-semibold uppercase tracking-widest text-brand-red-400">Formação e registro profissional</span>
       </div>
       <h2 class="mt-3 max-w-2xl text-balance font-display text-3xl font-bold text-white sm:text-4xl" data-reveal>
@@ -404,7 +405,7 @@
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="left" data-reveal-delay="0">
+        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="left" data-reveal-delay="0">
           <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-red-500/15 text-brand-red-400">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
           </span>
@@ -412,7 +413,7 @@
           <p class="mt-2 text-sm leading-relaxed text-mist-400">Faculdade Educacional da Lapa (FAEL), formado em 2019.</p>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="right" data-reveal-delay="90">
+        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="right" data-reveal-delay="90">
           <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-red-500/15 text-brand-red-400">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
           </span>
@@ -420,7 +421,7 @@
           <p class="mt-2 text-sm leading-relaxed text-mist-400">Nível médio, Instituto de Treinamento e Educação Continuada do Carajás (ITECC).</p>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="left" data-reveal-delay="180">
+        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="left" data-reveal-delay="180">
           <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-red-500/15 text-brand-red-400">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
           </span>
@@ -428,7 +429,7 @@
           <p class="mt-2 text-sm leading-relaxed text-mist-400">Nível médio, Instituto de Treinamento e Educação Continuada do Carajás (ITECC).</p>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-reveal data-reveal-side="right" data-reveal-delay="270">
+        <div class="rounded-3xl border border-white/10 bg-ink-900 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-red-500/40 hover:shadow-[0_24px_48px_-24px_rgba(226,31,38,0.35)]" data-tilt data-reveal data-reveal-side="right" data-reveal-delay="270">
           <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-red-500/15 text-brand-red-400">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
           </span>
@@ -440,7 +441,87 @@
     </div>
   </section>
 
-  <!-- Next sections (Como funciona, FAQ, CTA final, Rodapé) come in the next pass. -->
+  <!-- Next sections (Como funciona, FAQ, CTA final) come in the next pass. -->
+
+  <!-- ======================= RODAPÉ ======================= -->
+  <footer class="border-t border-white/10 bg-ink-950">
+    <div class="mx-auto max-w-7xl px-5 py-16 sm:px-8">
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.9fr_0.9fr_1fr]" data-footer-cols>
+
+        <!-- Brand -->
+        <div>
+          <a href="#topo" class="flex h-12 items-center gap-3">
+            <img src="/assents/logo-charlie-telecom-icon-transparent.png" alt="" class="h-full w-auto object-contain" />
+            <span class="font-display text-lg font-bold leading-tight tracking-tight text-brand-red-500">
+              CHARLIE TELECOM
+            </span>
+          </a>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-mist-400">Segurança eletrônica e telecom em Bauru, SP, com mais de 25 anos de experiência. Câmeras, alarme, portão e rede, resolvidos por um profissional só.</p>
+          <a
+            href="https://wa.me/5514996248282?text=Ol%C3%A1!%20Quero%20pedir%20um%20or%C3%A7amento."
+            target="_blank" rel="noopener"
+            class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-red-500 px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.03] hover:bg-brand-red-600"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.08 8.08 0 0 1 8.1 8.11c0 4.48-3.63 8.11-8.1 8.11a8 8 0 0 1-4.1-1.13l-.29-.17-3.14.82.84-3.06-.19-.31a8.03 8.03 0 0 1-1.23-4.28c0-4.48 3.65-8.09 8.11-8.09m-4.38 4.62c-.16 0-.43.06-.65.31s-.86.84-.86 2.05.88 2.38 1 2.55 1.74 2.78 4.29 3.79c2.12.84 2.55.67 3.01.63.46-.04 1.49-.61 1.7-1.19.21-.59.21-1.09.15-1.19-.06-.11-.23-.17-.48-.29s-1.49-.74-1.72-.82-.4-.13-.57.13-.65.82-.8 1c-.15.17-.29.19-.55.06-.25-.13-1.07-.4-2.04-1.27-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.4-.79-1.9-.2-.5-.41-.43-.57-.44Z"/></svg>
+            Falar no WhatsApp
+          </a>
+        </div>
+
+        <!-- Navegação -->
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-brand-red-500">Navegação</p>
+          <ul class="mt-4 space-y-2.5 text-sm">
+            <li><a href="#servicos" class="text-mist-300 transition-colors hover:text-white">Serviços</a></li>
+            <li><a href="#marcas" class="text-mist-300 transition-colors hover:text-white">Marcas</a></li>
+            <li><a href="#por-que" class="text-mist-300 transition-colors hover:text-white">Por que a Charlie</a></li>
+            <li><a href="#sobre" class="text-mist-300 transition-colors hover:text-white">Sobre</a></li>
+            <li><a href="#certificacoes" class="text-mist-300 transition-colors hover:text-white">Certificações</a></li>
+          </ul>
+        </div>
+
+        <!-- Serviços -->
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-brand-red-500">Serviços</p>
+          <ul class="mt-4 space-y-2.5 text-sm">
+            <li><a href="#servicos" class="text-mist-300 transition-colors hover:text-white">CFTV / Câmeras IP</a></li>
+            <li><a href="#servicos" class="text-mist-300 transition-colors hover:text-white">Alarmes e Monitoramento</a></li>
+            <li><a href="#servicos" class="text-mist-300 transition-colors hover:text-white">Automação de Portões</a></li>
+            <li><a href="#servicos" class="text-mist-300 transition-colors hover:text-white">Redes e Infraestrutura</a></li>
+          </ul>
+        </div>
+
+        <!-- Contato -->
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-brand-red-500">Contato</p>
+          <ul class="mt-4 space-y-2.5 text-sm text-mist-300">
+            <li>
+              <a href="https://wa.me/5514996248282" target="_blank" rel="noopener" class="flex items-center gap-2 transition-colors hover:text-white">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="shrink-0 text-[#25D366]" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.08 8.08 0 0 1 8.1 8.11c0 4.48-3.63 8.11-8.1 8.11a8 8 0 0 1-4.1-1.13l-.29-.17-3.14.82.84-3.06-.19-.31a8.03 8.03 0 0 1-1.23-4.28c0-4.48 3.65-8.09 8.11-8.09m-4.38 4.62c-.16 0-.43.06-.65.31s-.86.84-.86 2.05.88 2.38 1 2.55 1.74 2.78 4.29 3.79c2.12.84 2.55.67 3.01.63.46-.04 1.49-.61 1.7-1.19.21-.59.21-1.09.15-1.19-.06-.11-.23-.17-.48-.29s-1.49-.74-1.72-.82-.4-.13-.57.13-.65.82-.8 1c-.15.17-.29.19-.55.06-.25-.13-1.07-.4-2.04-1.27-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.4-.79-1.9-.2-.5-.41-.43-.57-.44Z"/></svg>
+                (14) 99624-8282
+              </a>
+            </li>
+            <li>Bauru, SP e região, raio de até 200km</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-14 flex flex-col items-center gap-4 border-t border-white/10 pt-8 sm:flex-row sm:justify-between">
+        <p class="text-xs text-mist-400">© 2026 Charlie Telecom. Todos os direitos reservados.</p>
+        <a
+          href="https://lucaslabs.netlify.app/"
+          target="_blank" rel="noopener"
+          class="flex items-center gap-2 text-xs text-mist-400 transition-colors hover:text-white"
+        >
+          Criado por
+          <span class="flex items-center gap-1.5 text-sm font-bold tracking-wide">
+            <img src="/assents/logo-hex.png" alt="" class="h-5 w-auto object-contain" />
+            <span class="text-[#B9C0CA]">LUCAS</span><span class="text-[#3FA9E8]">LABS</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <a
     href="https://wa.me/5514996248282?text=Ol%C3%A1!%20Quero%20pedir%20um%20or%C3%A7amento."
@@ -452,6 +533,7 @@
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.08 8.08 0 0 1 8.1 8.11c0 4.48-3.63 8.11-8.1 8.11a8 8 0 0 1-4.1-1.13l-.29-.17-3.14.82.84-3.06-.19-.31a8.03 8.03 0 0 1-1.23-4.28c0-4.48 3.65-8.09 8.11-8.09m-4.38 4.62c-.16 0-.43.06-.65.31s-.86.84-.86 2.05.88 2.38 1 2.55 1.74 2.78 4.29 3.79c2.12.84 2.55.67 3.01.63.46-.04 1.49-.61 1.7-1.19.21-.59.21-1.09.15-1.19-.06-.11-.23-.17-.48-.29s-1.49-.74-1.72-.82-.4-.13-.57.13-.65.82-.8 1c-.15.17-.29.19-.55.06-.25-.13-1.07-.4-2.04-1.27-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.4-.79-1.9-.2-.5-.41-.43-.57-.44Z"/></svg>
   </a>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
   <script src="/assets/js/main.js"></script>
 </body>
 </html>

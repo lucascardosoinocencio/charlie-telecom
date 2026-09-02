@@ -4,7 +4,7 @@
   --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand palette — sourced from the Charlie Telecom logo (red / near-black / gray). */
+  /* Brand palette, sourced from the Charlie Telecom logo (red / near-black / gray). */
   --color-ink-950: #0a0b0d;
   --color-ink-900: #121417;
   --color-ink-800: #1b1e23;
@@ -45,7 +45,47 @@
 }
 
 @layer components {
-  /* One-shot scroll/entrance reveals — fade-up, fired once by IntersectionObserver in main.js */
+  /* Hero entrance items, animated in a staggered anime.js timeline on load (see main.js) */
+  [data-hero-item] {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  /* Section kicker line, drawn from 0 to full width by anime.js when its section reveals */
+  [data-kicker-line] {
+    width: 0;
+  }
+
+  /* Footer columns, staggered in by anime.js when the footer scrolls into view */
+  [data-footer-cols] > div {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  /* Mousemove 3D tilt cards: JS drives the transform directly, this just sets up the context */
+  [data-tilt] {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-hero-item] {
+      opacity: 1;
+      transform: none;
+    }
+    [data-kicker-line] {
+      width: 2rem;
+    }
+    [data-tilt] {
+      transform: none !important;
+    }
+    [data-footer-cols] > div {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* One-shot scroll/entrance reveals, fade-up, fired once by IntersectionObserver in main.js */
   [data-reveal] {
     opacity: 0;
     transform: translateY(32px);

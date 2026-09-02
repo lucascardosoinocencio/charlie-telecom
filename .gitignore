@@ -2,7 +2,7 @@ node_modules/
 .claude/
 .impeccable/
 
-# Personal documents with sensitive data (CPF, RG, birthdate) — never publish these.
+# Personal documents with sensitive data (CPF, RG, birthdate). Never publish these.
 assents/crt-sp.jpg
 assents/diploma-processos-gerenciais.jpeg
 assents/diploma-eletrotecnica.jpeg
@@ -20,3 +20,6 @@ assents/hi-speed-fb nice.png
 
 .DS_Store
 Thumbs.db
+
+# Local Netlify folder
+.netlify

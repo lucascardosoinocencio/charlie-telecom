@@ -1,6 +1,8 @@
 (() => {
   "use strict";
 
+  const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   const header = document.querySelector("[data-header]");
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const mobileMenu = document.querySelector("[data-mobile-menu]");
@@ -15,10 +17,25 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // --- Mobile menu ---
+  // --- Mobile menu (links stagger in with anime.js when the panel opens) ---
   menuToggle?.addEventListener("click", () => {
     const isOpen = mobileMenu?.classList.toggle("hidden") === false;
     menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+    if (isOpen && typeof window.anime === "function" && !prefersReducedMotion()) {
+      const links = mobileMenu.querySelectorAll("a");
+      links.forEach((el) => {
+        el.style.opacity = "0";
+      });
+      window.anime({
+        targets: links,
+        opacity: [0, 1],
+        translateX: [-16, 0],
+        duration: 400,
+        delay: window.anime.stagger(50),
+        easing: "easeOutQuad",
+      });
+    }
   });
   mobileMenu?.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
@@ -40,6 +57,23 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
+
+            // Draw the section's red kicker line alongside the fade-up, anime.js-powered.
+            const line = entry.target.querySelector("[data-kicker-line]");
+            if (line) {
+              if (typeof window.anime === "function" && !prefersReducedMotion()) {
+                window.anime({
+                  targets: line,
+                  width: ["0rem", "2rem"],
+                  duration: 700,
+                  delay: 150,
+                  easing: "easeOutQuart",
+                });
+              } else {
+                line.style.width = "2rem";
+              }
+            }
+
             obs.unobserve(entry.target);
           }
         });
@@ -51,6 +85,97 @@
   } else {
     revealTargets.forEach((el) => el.classList.add("is-visible"));
   }
+
+  // --- Hero entrance: staggered anime.js timeline on load ---
+  const heroItems = document.querySelectorAll("[data-hero-item]");
+  if (heroItems.length) {
+    if (typeof window.anime === "function" && !prefersReducedMotion()) {
+      window.anime({
+        targets: heroItems,
+        opacity: [0, 1],
+        translateY: [24, 0],
+        duration: 900,
+        delay: window.anime.stagger(130, { start: 200 }),
+        easing: "easeOutExpo",
+      });
+    } else {
+      heroItems.forEach((el) => {
+        el.style.opacity = "1";
+        el.style.transform = "none";
+      });
+    }
+  }
+
+  // --- Footer columns staggered entrance, anime.js ---
+  const footerCols = document.querySelector("[data-footer-cols]");
+  if (footerCols) {
+    const cols = footerCols.querySelectorAll(":scope > div");
+    if ("IntersectionObserver" in window) {
+      const footerObserver = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            if (typeof window.anime === "function" && !prefersReducedMotion()) {
+              window.anime({
+                targets: cols,
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 800,
+                delay: window.anime.stagger(100),
+                easing: "easeOutExpo",
+              });
+            } else {
+              cols.forEach((el) => {
+                el.style.opacity = "1";
+                el.style.transform = "none";
+              });
+            }
+            obs.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.2 }
+      );
+      footerObserver.observe(footerCols);
+    } else {
+      cols.forEach((el) => {
+        el.style.opacity = "1";
+        el.style.transform = "none";
+      });
+    }
+  }
+
+  // --- 3D mousemove tilt on cards, spring-back on leave (all driven by anime.js) ---
+  document.querySelectorAll("[data-tilt]").forEach((card) => {
+    if (prefersReducedMotion() || typeof window.anime !== "function") return;
+    const maxTilt = 8;
+
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width - 0.5;
+      const py = (e.clientY - rect.top) / rect.height - 0.5;
+      window.anime({
+        targets: card,
+        rotateX: -py * maxTilt,
+        rotateY: px * maxTilt,
+        translateY: -4,
+        scale: 1.015,
+        duration: 400,
+        easing: "easeOutQuad",
+      });
+    });
+
+    card.addEventListener("mouseleave", () => {
+      window.anime({
+        targets: card,
+        rotateX: 0,
+        rotateY: 0,
+        translateY: 0,
+        scale: 1,
+        duration: 700,
+        easing: "easeOutElastic(1, .7)",
+      });
+    });
+  });
 
   // --- Auto-rotating product photo stacks (service cards) ---
   const ROTATE_MS = 3800;
@@ -80,4 +205,47 @@
     rotator.addEventListener("mouseenter", stop);
     rotator.addEventListener("mouseleave", start);
   });
+
+  // --- Animated stat counters (Hero credibility numbers), powered by anime.js ---
+  const counters = document.querySelectorAll("[data-counter]");
+  if (counters.length) {
+    const runCounter = (el) => {
+      const target = Number(el.getAttribute("data-target"));
+      const suffix = el.getAttribute("data-suffix") || "";
+
+      if (typeof window.anime !== "function" || prefersReducedMotion()) {
+        el.textContent = `${target}${suffix}`;
+        return;
+      }
+
+      const counted = { value: 0 };
+      window.anime({
+        targets: counted,
+        value: target,
+        duration: 1800,
+        easing: "easeOutExpo",
+        round: 1,
+        update: () => {
+          el.textContent = `${counted.value}${suffix}`;
+        },
+      });
+    };
+
+    if ("IntersectionObserver" in window) {
+      const counterObserver = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              runCounter(entry.target);
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      counters.forEach((el) => counterObserver.observe(el));
+    } else {
+      counters.forEach(runCounter);
+    }
+  }
 })();
