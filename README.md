@@ -1,68 +1,66 @@
 # Charlie Telecom
 
-Landing page for Charlie Telecom, an electronic security and telecom installer based in Bauru, SP, serving a radius of about 200km. The site covers CFTV/IP cameras, alarm systems, gate automation, and network infrastructure, with WhatsApp as the main conversion channel.
+Landing page para a Charlie Telecom, instaladora de segurança eletrônica e telecom em Bauru, SP, atendendo num raio de cerca de 200km. O site cobre câmeras CFTV/IP, sistemas de alarme, automação de portões e infraestrutura de rede, com o WhatsApp como principal canal de conversão.
 
-Live focus: fast, mobile-first, and built to convert a visitor into a quote request.
+Foco do projeto: rápido, mobile-first e construído para converter um visitante em pedido de orçamento.
 
 ## Stack
 
-- Static HTML, no framework or server runtime
-- [Tailwind CSS v4](https://tailwindcss.com/) (CSS-first config, no `tailwind.config.js`)
-- Vanilla JavaScript for scroll reveals, the auto-rotating product photo cards, and the mobile menu
-- Google Fonts: [Sora](https://fonts.google.com/specimen/Sora) for headings, [Manrope](https://fonts.google.com/specimen/Manrope) for body text
+- HTML estático, sem framework ou runtime de servidor
+- [Tailwind CSS v4](https://tailwindcss.com/) (configuração via CSS, sem `tailwind.config.js`)
+- JavaScript vanilla para os scroll reveals, os cards de fotos de produto com rotação automática e o menu mobile
+- Google Fonts: [Sora](https://fonts.google.com/specimen/Sora) para títulos, [Manrope](https://fonts.google.com/specimen/Manrope) para o corpo do texto
 
-No build step is required to view the page, only to regenerate the compiled CSS after editing `src/input.css` or changing Tailwind classes in `index.html`.
+Não é preciso nenhum build para visualizar a página, apenas para regerar o CSS compilado depois de editar `src/input.css` ou alterar classes Tailwind no `index.html`.
 
-## Getting started
+## Como rodar
 
 ```bash
 npm install
 npm run build:css
 ```
 
-Then serve the project root with any static file server (the page uses root-relative paths like `/assets/css/styles.css`, so it needs to be served from the project root rather than opened directly as a `file://` URL):
+Depois sirva a raiz do projeto com qualquer servidor de arquivos estáticos (a página usa caminhos relativos à raiz, como `/assets/css/styles.css`, então precisa ser servida a partir da raiz do projeto, não aberta diretamente como um `file://`):
 
 ```bash
 python -m http.server 5500
 ```
 
-Open `http://localhost:5500`.
+Abra `http://localhost:5500`.
 
-While editing styles, run the watcher instead of rebuilding manually:
+Durante a edição dos estilos, rode o watcher em vez de recompilar manualmente:
 
 ```bash
 npm run watch:css
 ```
 
-## Project structure
+## Estrutura do projeto
 
 ```
-index.html              Single-page site, all sections
-src/input.css            Tailwind source (theme tokens, custom components)
-assets/css/styles.css    Compiled CSS (generated, do not edit by hand)
-assets/js/main.js        Scroll reveals, photo rotators, nav behavior
-assents/                 Images and logos used on the page
-scripts/                 One-off Node scripts used to prep images (background
-                          removal, cropping) during development
-PRODUCT.md                Internal product/context notes for this project
-PLANO-PROJETO.md          Original project brief
+index.html              Página única, todas as seções
+src/input.css            Fonte do Tailwind (tokens do tema, componentes customizados)
+assets/css/styles.css    CSS compilado (gerado, não editar à mão)
+assets/js/main.js        Scroll reveals, rotação de fotos, comportamento da navegação
+assents/                 Imagens e logos usadas na página
+scripts/                 Scripts pontuais em Node para preparar imagens
+                         (remoção de fundo, recorte) durante o desenvolvimento
 ```
 
-## Sections
+## Seções
 
-Header, hero, brand bar, services, why-us, founder bio and career timeline, certifications, and more to come (how-it-works, FAQ, final CTA, footer).
+Header, hero, barra de marcas, serviços, por que a Charlie, bio e linha do tempo de carreira do fundador, certificações, e mais por vir (como funciona, FAQ, CTA final, rodapé).
 
-## Image handling
+## Tratamento de imagem
 
-Several source images (logos, diplomas) come from real files with backgrounds or formatting that needed cleanup before they could go on a dark, mobile-first layout. The scripts in `scripts/` handle that with plain Node (`jpeg-js` and `pngjs`, no native image binaries) so they run anywhere without extra system dependencies:
+Várias imagens de origem (logos, diplomas) vêm de arquivos reais com fundos ou formatação que precisaram de limpeza antes de entrar num layout escuro e mobile-first. Os scripts em `scripts/` cuidam disso com Node puro (`jpeg-js` e `pngjs`, sem binários nativos de imagem), rodando em qualquer lugar sem dependências extras do sistema:
 
-- `white-to-transparent.mjs` / `logo-to-transparent.mjs`: key out a white background and crop tight to content
-- `trim-dark-bg.mjs`: crop a dark-background logo tight to its content
-- `floodfill-transparent.mjs`: remove a background by flood-filling from the image edges, which works even when the background and part of the artwork share a similar dark color
-- `crop-png.mjs` / `crop-and-trim-dark.mjs`: manual region crops with auto-trim
+- `white-to-transparent.mjs` / `logo-to-transparent.mjs`: remove um fundo branco e recorta rente ao conteúdo
+- `trim-dark-bg.mjs`: recorta rente ao conteúdo um logo com fundo escuro
+- `floodfill-transparent.mjs`: remove um fundo por flood-fill a partir das bordas da imagem, funcionando mesmo quando o fundo e parte da arte compartilham uma cor escura parecida
+- `crop-png.mjs` / `crop-and-trim-dark.mjs`: recortes manuais de região com auto-trim
 
-Diploma and ID scans that expose personal data (CPF, RG, birthdate) are intentionally kept out of this repository and never used as images on the site. Where that information matters, it's presented as plain text credential cards instead.
+Digitalizações de diploma e documentos que expõem dados pessoais (CPF, RG, data de nascimento) são propositalmente mantidas fora deste repositório e nunca usadas como imagens no site. Onde essa informação importa, ela é apresentada como cartões de credencial em texto simples.
 
-## License
+## Licença
 
-MIT, see [LICENSE](LICENSE).
+MIT, veja [LICENSE](LICENSE).
