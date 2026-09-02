@@ -1,0 +1,21 @@
+{
+  "name": "projeto-site-charlie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0",
+    "tailwindcss": "^4.3.3"
+  }
+}
