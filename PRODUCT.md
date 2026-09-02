@@ -6,6 +6,10 @@
 
 web
 
+## Repository
+
+Pushed to `github.com/lucascardosoinocencio/charlie-telecom`, currently **private**. The user wants it switched to **public once the site is 100% ready**, not before, this is a pending action to remember for a later session.
+
 ## Stack
 
 Confirmed by user brief (`PLANO-PROJETO.md`): static HTML + Tailwind CSS (build-time, not the runtime CDN) + vanilla JS. No heavy client-side SPA framework — SEO and Core Web Vitals are explicit priorities. Deploy target: Vercel/Netlify/GitHub Pages (static hosting).
