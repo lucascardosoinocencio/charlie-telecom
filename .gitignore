@@ -18,6 +18,10 @@ assents/logo-hikvision.jpg
 assents/cftv-ip-hikvision.png
 assents/hi-speed-fb nice.png
 
+# Internal planning notes, not meant to be public.
+PRODUCT.md
+PLANO-PROJETO.md
+
 .DS_Store
 Thumbs.db
 
