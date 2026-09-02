@@ -106,6 +106,20 @@
     }
   }
 
+  // --- Desktop nav links: a quick anime.js pop on hover, layered on the CSS color/border transition ---
+  if (typeof window.anime === "function" && !prefersReducedMotion()) {
+    document.querySelectorAll("[data-nav-link]").forEach((link) => {
+      link.addEventListener("mouseenter", () => {
+        window.anime({
+          targets: link,
+          scale: [1, 1.06, 1],
+          duration: 420,
+          easing: "easeOutQuad",
+        });
+      });
+    });
+  }
+
   // --- Footer columns staggered entrance, anime.js ---
   const footerCols = document.querySelector("[data-footer-cols]");
   if (footerCols) {
