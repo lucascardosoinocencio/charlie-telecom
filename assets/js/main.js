@@ -263,6 +263,55 @@
     }
   }
 
+  // --- Animated text counter (Hero "Bauru e Região" stat), letter-by-letter reveal ---
+  const textCounters = document.querySelectorAll("[data-text-counter]");
+  if (textCounters.length) {
+    const runTextCounter = (el) => {
+      const text = el.getAttribute("data-text") || "";
+
+      if (typeof window.anime !== "function" || prefersReducedMotion()) {
+        el.textContent = text;
+        return;
+      }
+
+      el.textContent = "";
+      const letterSpans = [...text].map((char) => {
+        const span = document.createElement("span");
+        span.textContent = char === " " ? " " : char;
+        span.style.display = "inline-block";
+        span.style.opacity = "0";
+        el.appendChild(span);
+        return span;
+      });
+
+      window.anime({
+        targets: letterSpans,
+        opacity: [0, 1],
+        translateY: [10, 0],
+        duration: 600,
+        delay: window.anime.stagger(35),
+        easing: "easeOutExpo",
+      });
+    };
+
+    if ("IntersectionObserver" in window) {
+      const textCounterObserver = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              runTextCounter(entry.target);
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      textCounters.forEach((el) => textCounterObserver.observe(el));
+    } else {
+      textCounters.forEach(runTextCounter);
+    }
+  }
+
   // --- Visit counter: real count from a hit-counter API, odometer digit roll (anime.js) ---
   const visitCounter = document.querySelector("[data-visit-counter]");
   const visitDigits = document.querySelector("[data-visit-counter-digits]");
