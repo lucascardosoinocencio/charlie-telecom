@@ -275,13 +275,29 @@
       }
 
       el.textContent = "";
-      const letterSpans = [...text].map((char) => {
-        const span = document.createElement("span");
-        span.textContent = char === " " ? " " : char;
-        span.style.display = "inline-block";
-        span.style.opacity = "0";
-        el.appendChild(span);
-        return span;
+      const letterSpans = [];
+      text.split(" ").forEach((word, wordIndex) => {
+        if (wordIndex > 0) {
+          const space = document.createElement("span");
+          space.textContent = " ";
+          space.style.display = "inline-block";
+          space.style.opacity = "0";
+          el.appendChild(space);
+          letterSpans.push(space);
+        }
+
+        const wordWrapper = document.createElement("span");
+        wordWrapper.style.display = "inline-block";
+        el.appendChild(wordWrapper);
+
+        [...word].forEach((char) => {
+          const span = document.createElement("span");
+          span.textContent = char;
+          span.style.display = "inline-block";
+          span.style.opacity = "0";
+          wordWrapper.appendChild(span);
+          letterSpans.push(span);
+        });
       });
 
       window.anime({
