@@ -154,7 +154,7 @@
   /* Visit counter odometer: each digit is a clipped column, a 0-9 strip inside
      it gets translateY'd by anime.js to the right digit (see main.js). */
   [data-visit-counter].is-visible {
-    display: inline-flex;
+    display: inline-block;
   }
   .odometer-col {
     display: inline-block;
@@ -162,6 +162,8 @@
     overflow: hidden;
     line-height: 1;
     vertical-align: top;
+    color: var(--color-brand-red-500);
+    text-shadow: 0 0 6px rgba(226, 31, 38, 0.9), 0 0 16px rgba(226, 31, 38, 0.55);
   }
   .odometer-col.is-static {
     line-height: normal;
@@ -173,14 +175,6 @@
   .odometer-strip span {
     height: 1em;
     line-height: 1;
-  }
-
-  [data-visit-counter-dot] {
-    animation: visit-pulse 2.4s ease-out infinite;
-  }
-  @keyframes visit-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.35; }
   }
 
   [data-whatsapp-float]::after {
