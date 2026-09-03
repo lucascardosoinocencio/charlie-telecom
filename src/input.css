@@ -151,6 +151,38 @@
     opacity: 1;
   }
 
+  /* Visit counter odometer: each digit is a clipped column, a 0-9 strip inside
+     it gets translateY'd by anime.js to the right digit (see main.js). */
+  [data-visit-counter].is-visible {
+    display: inline-flex;
+  }
+  .odometer-col {
+    display: inline-block;
+    height: 1em;
+    overflow: hidden;
+    line-height: 1;
+    vertical-align: top;
+  }
+  .odometer-col.is-static {
+    line-height: normal;
+  }
+  .odometer-strip {
+    display: flex;
+    flex-direction: column;
+  }
+  .odometer-strip span {
+    height: 1em;
+    line-height: 1;
+  }
+
+  [data-visit-counter-dot] {
+    animation: visit-pulse 2.4s ease-out infinite;
+  }
+  @keyframes visit-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
   [data-whatsapp-float]::after {
     content: "";
     position: absolute;
