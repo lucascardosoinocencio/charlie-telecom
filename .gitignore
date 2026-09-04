@@ -29,3 +29,7 @@ Thumbs.db
 .netlify
 .vercel
 .env*
+
+# Claude Code local tooling artifacts
+.agents
+skills-lock.json

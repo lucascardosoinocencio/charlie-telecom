@@ -359,7 +359,7 @@
       return columns;
     };
 
-    fetch("https://countapi.mileshilliard.com/api/v1/hit/charlietelecom-site-visitas", { cache: "no-store" })
+    fetch("/api/visits", { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error("bad response");
         return res.json();
