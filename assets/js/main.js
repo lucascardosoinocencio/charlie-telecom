@@ -3,6 +3,14 @@
 
   const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // --- Announce "opens in a new tab" to screen readers on every external link ---
+  document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+    const note = document.createElement("span");
+    note.className = "sr-only";
+    note.textContent = " (abre em nova aba)";
+    link.appendChild(note);
+  });
+
   const header = document.querySelector("[data-header]");
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const mobileMenu = document.querySelector("[data-mobile-menu]");
@@ -104,6 +112,38 @@
         el.style.transform = "none";
       });
     }
+  }
+
+  // --- Scrollspy: mark the nav link for whichever section is currently in view ---
+  const navLinks = document.querySelectorAll("[data-nav-link]");
+  if (navLinks.length && "IntersectionObserver" in window) {
+    const sectionMap = new Map();
+    navLinks.forEach((link) => {
+      const id = link.getAttribute("href")?.replace("#", "");
+      const section = id ? document.getElementById(id) : null;
+      if (section) sectionMap.set(section, link);
+    });
+
+    const setActiveLink = (activeLink) => {
+      navLinks.forEach((link) => {
+        const isActive = link === activeLink;
+        link.classList.toggle("is-active", isActive);
+        if (isActive) link.setAttribute("aria-current", "page");
+        else link.removeAttribute("aria-current");
+      });
+    };
+
+    const spyObserver = new IntersectionObserver(
+      (entries) => {
+        const mostVisible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (mostVisible) setActiveLink(sectionMap.get(mostVisible.target));
+      },
+      { rootMargin: "-45% 0px -45% 0px" }
+    );
+
+    sectionMap.forEach((_, section) => spyObserver.observe(section));
   }
 
   // --- Desktop nav links: a quick anime.js pop on hover, layered on the CSS color/border transition ---

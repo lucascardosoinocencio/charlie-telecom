@@ -22,6 +22,7 @@
 
   --shadow-glow-red: 0 0 0 1px color-mix(in oklab, var(--color-brand-red-500) 40%, transparent),
     0 8px 30px -8px color-mix(in oklab, var(--color-brand-red-500) 55%, transparent);
+  --shadow-card-hover: 0 24px 48px -24px rgba(226, 31, 38, 0.35);
 }
 
 @layer base {
@@ -118,6 +119,13 @@
     }
   }
 
+  /* Scrollspy: active nav link for the section currently in view (see main.js) */
+  [data-nav-link].is-active {
+    border-color: color-mix(in oklab, var(--color-brand-red-500) 40%, transparent);
+    background-color: color-mix(in oklab, var(--color-brand-red-500) 5%, transparent);
+    color: var(--color-brand-red-400);
+  }
+
   header[data-header].is-scrolled {
     background-color: color-mix(in oklab, var(--color-ink-950) 92%, transparent);
     box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.06), 0 12px 30px -18px rgba(0, 0, 0, 0.6);
@@ -189,5 +197,19 @@
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
     70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-whatsapp-float]::after {
+      animation: none;
+    }
+  }
+
+  /* Brand-colored focus ring, replaces the browser default so keyboard focus reads consistently with the palette */
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid var(--color-brand-red-500);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
