@@ -3,6 +3,67 @@
 
   const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // --- Google Analytics (GA4): only loaded after the visitor accepts the cookie banner ---
+  const GA_MEASUREMENT_ID = "G-M84NCBRYYN";
+  const CONSENT_KEY = "charlietelecom-cookie-consent";
+
+  const readConsent = () => {
+    try {
+      return localStorage.getItem(CONSENT_KEY);
+    } catch (err) {
+      return null;
+    }
+  };
+  const writeConsent = (value) => {
+    try {
+      localStorage.setItem(CONSENT_KEY, value);
+    } catch (err) {
+      // Storage unavailable (private mode, blocked cookies): consent just won't persist across visits.
+    }
+  };
+
+  const loadGoogleAnalytics = () => {
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script);
+  };
+
+  const cookieBanner = document.querySelector("[data-cookie-banner]");
+  const existingConsent = readConsent();
+
+  if (existingConsent === "accepted") {
+    loadGoogleAnalytics();
+  } else if (existingConsent !== "rejected") {
+    cookieBanner?.classList.remove("hidden");
+  }
+
+  document.querySelector("[data-cookie-accept]")?.addEventListener("click", () => {
+    writeConsent("accepted");
+    loadGoogleAnalytics();
+    cookieBanner?.classList.add("hidden");
+  });
+
+  document.querySelector("[data-cookie-reject]")?.addEventListener("click", () => {
+    writeConsent("rejected");
+    cookieBanner?.classList.add("hidden");
+  });
+
+  document.querySelector("[data-cookie-manage]")?.addEventListener("click", () => {
+    cookieBanner?.classList.remove("hidden");
+  });
+
   // --- Announce "opens in a new tab" to screen readers on every external link ---
   document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     const note = document.createElement("span");
