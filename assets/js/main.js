@@ -3,6 +3,17 @@
 
   const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // --- Hero background video: never autoplay for visitors who prefer reduced motion (poster frame stays put) ---
+  const heroVideo = document.querySelector("[data-hero-video]");
+  if (heroVideo) {
+    if (prefersReducedMotion()) {
+      heroVideo.removeAttribute("autoplay");
+      heroVideo.pause();
+    } else {
+      heroVideo.play().catch(() => {});
+    }
+  }
+
   // --- Google Analytics (GA4): only loaded after the visitor accepts the cookie banner ---
   const GA_MEASUREMENT_ID = "G-M84NCBRYYN";
   const CONSENT_KEY = "charlietelecom-cookie-consent";
