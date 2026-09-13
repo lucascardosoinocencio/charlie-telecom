@@ -3,7 +3,7 @@
   "short_name": "Charlie Telecom",
   "description": "Segurança eletrônica e telecom em Bauru-SP: CFTV, alarme, automação de portão e redes.",
   "start_url": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#0a0b0d",
   "theme_color": "#0a0b0d",
   "lang": "pt-BR",
