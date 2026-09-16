@@ -1,4 +1,12 @@
 {
   "buildCommand": "npm run build:css",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.charlietelecom.com.br" }],
+      "destination": "https://charlietelecom.com.br/:path*",
+      "permanent": true
+    }
+  ]
 }
